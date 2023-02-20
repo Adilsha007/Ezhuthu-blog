@@ -1,0 +1,70 @@
+
+
+<div class="  bg-dark text-white" style="text-align: center; padding-top: 6rem;">
+    <main class="mt-4 mb-5">
+        <div class="container">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-md-8 mb-4">
+                    <!--Section: Post data-mdb-->
+                    <section class="border-bottom mb-4">
+                        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(144).jpg"
+                            class="img-fluid shadow-2-strong rounded-5 mb-4" alt="" />
+    
+                        <div class="row align-items-center mb-4">
+                            <div class="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
+                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg"
+                                    class="rounded-5 shadow-1-strong me-2" height="35" alt="" loading="lazy" />
+                                <span> Published <u>15.07.2020</u></span>
+                            </div>
+
+                        </div>
+                    </section>
+                    <!--Section: Post data-mdb-->
+    
+                    <!--Section: Text-->
+                    <section>
+    
+                        <h3><strong>{{post?.title}}</strong></h3>
+
+                        <p class="note note-light">
+                            <strong>{{post?.subtitle}}</strong> 
+                        </p>
+    
+                        <p>
+                            {{post?.description}}
+                        </p>
+
+                    </section>
+                    <!--Section: Text-->
+    
+                    <!--Section: Share buttons-->
+                    <section class="text-center border-top border-bottom py-4 mb-4">
+                        <p><strong>Share with your friends:</strong></p>
+    
+                        <button type="button" class="btn btn-primary me-1" style="background-color: #3b5998;">
+                            <i class="zmdi zmdi-facebook"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary me-1" style="background-color: #55acee;">
+                            <i class="zmdi zmdi-twitter"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary me-1" style="background-color: #0082ca;">
+                            <i class="zmdi zmdi-instagram"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary me-1" [routerLink]="['/posts', 'edit-post', post?._id]">Update</button>
+
+                    </section>
+                    <!--Section: Share buttons-->
+                </div>
+                <!--Grid column-->
+    
+                <!--Grid column-->
+    
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+    </main>
+</div>
+

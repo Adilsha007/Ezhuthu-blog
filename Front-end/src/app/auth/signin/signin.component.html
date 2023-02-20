@@ -1,0 +1,47 @@
+<div class="signup-div">
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="../../../assets/images/signin-image.jpg" alt="sing up image"></figure>
+                <!-- <a href="#" class="signup-image-link">Create an account</a> -->
+            </div>
+            <div class="signin-form">
+                <h2 class="form-title">Sign in</h2>
+                <form [formGroup]="signinForm" class="register-form" id="login-form" (ngSubmit)="onSignin()">
+                    <div class="form-group">
+                        <label for="your_name"><i class="zmdi zmdi-email"></i></label>
+                        <input type="text" formControlName="email" id="your_name" placeholder="Email id" />
+                        <span style="color: red;" *ngIf="signinForm.controls['email'].touched && !signinForm.controls['email'].valid">
+                            <span *ngIf="signinForm.controls['email'].errors?.['required']">
+                                Email is required
+                            </span>
+                            <span *ngIf="signinForm.controls['email'].errors?.['email']">
+                                Invalid Email
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" formControlName="password" id="your_pass" placeholder="Password" />
+                        <span style="color: red;" *ngIf="signinForm.controls['password'].touched && !signinForm.controls['password'].valid">
+                            <span *ngIf="signinForm.controls['password'].errors?.['minLength']">
+                                Password must have atleast 4 characters
+                            </span>
+                            <span *ngIf="signinForm.controls['password'].errors?.['required']">
+                                Password is required
+                            </span>
+                        </span>
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signin" id="signin" class="btn btn-primary" value="Log in" [disabled]="!signinForm.valid" />
+                    </div>
+                </form>
+                <div class="col-md-12 mt-2">
+                    <div class="alert alert-danger" *ngIf="errorMessage | async as error">{{error}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

@@ -1,0 +1,80 @@
+<body>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Create A New Blog</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="name">Blog title</div>
+                            <div class="value">
+                                <input class="input--style-6" type="text" formControlName="title">
+                                <span style="color: red;" *ngIf="postForm.controls['title'].touched && !postForm.controls['title'].valid">
+                                    <span *ngIf="postForm.controls['title'].errors?.['minLength']">
+                                        Title should be minimum 6 characters
+                                    </span>
+                                    <span *ngIf="postForm.controls['title'].errors?.['required']">
+                                        Title is required
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Sub title</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="email" formControlName="subtitle"
+                                        >
+                                </div>
+                                <span style="color: red;" *ngIf="postForm.controls['subtitle'].touched && !postForm.controls['subtitle'].valid">
+                                    <span *ngIf="postForm.controls['subtitle'].errors?.['minLength']">
+                                        Title should be minimum 6 characters
+                                    </span>
+                                    <span *ngIf="postForm.controls['subtitle'].errors?.['required']">
+                                        Title is required
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Description</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-6" formControlName="description"
+                                        ></textarea>
+                                </div>
+                                <span style="color: red;" *ngIf="!postForm.valid">{{descriptionError()}}</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Upload image</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" name="file_cv" id="file">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span>
+                                </div>
+                                <div class="label--desc">Upload your image in any format. Max file size
+                                    20 MB</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn--radius-2 btn--blue-2" [disabled]="!postForm.valid" type="submit">Post Your Blog</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../../../assets/vendor/jquery/jquery-edit.min.js"></script>
+
+
+    <!-- Main JS-->
+    <script src="../../../assets/js/global.js"></script>
+
+</body>

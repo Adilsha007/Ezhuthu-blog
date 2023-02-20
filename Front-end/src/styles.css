@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.hero {
+  height: 800px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+ }
